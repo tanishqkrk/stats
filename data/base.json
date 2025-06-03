@@ -1,0 +1,100 @@
+[
+  {
+    "id": "Strength",
+    "name": "Strength",
+    "metrics": [
+      {
+        "id": "Bench Press",
+        "name": "Bench Press",
+        "current": 50,
+        "goal": 100,
+        "unit": "kg"
+      },
+      {
+        "id": "Pull ups",
+        "name": "Pull ups",
+        "current": 10,
+        "goal": 30,
+        "unit": "clean"
+      }
+    ],
+    "percentage": 0
+  },
+  {
+    "id": "Stamina",
+    "name": "Stamina",
+    "metrics": [
+      {
+        "id": "Jog",
+        "name": "Jog",
+        "current": 0.5,
+        "goal": 3,
+        "unit": "km"
+      },
+      {
+        "id": "Heavy Bag workout",
+        "name": "Heavy Bag workout",
+        "current": 30,
+        "goal": 180,
+        "unit": "s"
+      }
+    ],
+    "percentage": 0
+  },
+  {
+    "id": "IQ",
+    "name": "IQ",
+    "metrics": [
+      {
+        "id": "Maths",
+        "name": "Maths",
+        "current": 0,
+        "goal": 4,
+        "unit": "units"
+      },
+      {
+        "id": "Chess",
+        "name": "Chess",
+        "current": 1,
+        "goal": 3,
+        "unit": "rank"
+      },
+      {
+        "id": "Books",
+        "name": "Books",
+        "current": 0,
+        "goal": 4,
+        "unit": "read"
+      }
+    ],
+    "percentage": 0
+  },
+  {
+    "id": "Skills",
+    "name": "Skills",
+    "metrics": [
+      {
+        "id": "Projects",
+        "name": "Projects",
+        "current": 0,
+        "goal": 5,
+        "unit": "launched"
+      }
+    ],
+    "percentage": 0
+  },
+  {
+    "id": "Career",
+    "name": "Career",
+    "metrics": [
+      {
+        "id": "Total comp",
+        "name": "Total comp",
+        "current": 5.4,
+        "goal": 24,
+        "unit": "Rs."
+      }
+    ],
+    "percentage": 0
+  }
+]

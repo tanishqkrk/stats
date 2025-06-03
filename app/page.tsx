@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Drawer,
   DrawerClose,
@@ -32,20 +32,37 @@ import {
 } from "@/components/ui/dialog";
 import { Lock, Edit3, Save, X, TrendingUp, Shield, Pencil } from "lucide-react";
 import Link from "next/link";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/fireabase";
 
 export default function TimeManagementDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
-
   const [data, setData] = useState([
-    { subject: "Strength", A: 78, fullMark: 100 },
-    { subject: "IQ", A: 82, fullMark: 100 },
-    { subject: "Stamina", A: 69, fullMark: 100 },
-    { subject: "Skills", A: 56, fullMark: 100 },
-    { subject: "Career", A: 52, fullMark: 100 },
+    { subject: "Strength", A: 0, fullMark: 100 },
+    { subject: "IQ", A: 0, fullMark: 100 },
+    { subject: "Stamina", A: 0, fullMark: 100 },
+    { subject: "Skills", A: 0, fullMark: 100 },
+    { subject: "Career", A: 0, fullMark: 100 },
   ]);
+
+  useEffect(() => {
+    (async function () {
+      const fetched = await getDoc(doc(db, "stats", "stats"));
+      const stats = fetched.data()?.stats;
+      if (stats) {
+        setData(() => {
+          return stats.map((s: any) => ({
+            subject: s.name,
+            A: s.percentage,
+            fullMark: 100,
+          }));
+        });
+      }
+    })();
+  }, []);
 
   const [editData, setEditData] = useState([...data]);
 
